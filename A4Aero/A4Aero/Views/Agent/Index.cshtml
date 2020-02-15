@@ -1,0 +1,37 @@
+﻿@model IEnumerable<A4Aero.Models.AgentList>
+
+@{
+    ViewBag.Title = "AgentList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Agent List</h2>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>JOINED ON</th>
+            <th>CODE</th>
+            <th>NAME</th>
+            <th>MARKUP PLAN</th>
+            <th>MOBILE</th>
+            <th>EMAIL</th>
+            <th>BALANCE(BDT)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var agent_list in Model)
+        {
+            <tr> 
+                <td>@agent_list.JOINED_ON</td>
+                <td>@agent_list.CODE</td>
+                <td>@Html.ActionLink(agent_list.NAME, "Edit", new { id = agent_list.Id })</td>
+                <td>@agent_list.MARKUP_PLAN</td>
+                <td>@agent_list.MOBILE</td>
+                <td>@agent_list.EMAIL</td>
+                <td>@agent_list.BALANCE</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

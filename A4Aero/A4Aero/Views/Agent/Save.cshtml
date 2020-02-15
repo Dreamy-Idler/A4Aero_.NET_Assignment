@@ -1,0 +1,38 @@
+﻿@model A4Aero.ViewModels.NewAgentViewModel
+@{
+    ViewBag.Title = "Save";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Save Agent Informations</h2>
+@using (Html.BeginForm("Save", "AgentList"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Lists.CODE)
+        @Html.TextBoxFor(m => m.Lists.CODE, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Lists.NAME)
+        @Html.TextBoxFor(m => m.Lists.NAME, new { @class = "form-control" })
+    </div>
+    @*
+    <div class="form-group">
+        @Html.LabelFor(m => m.Lists.MARKUP_PLAN)
+        @Html.EnumDropDownListFor(m => m.Lists.MARKUP_PLAN, new SelectList(Model.Agent_Lists, "Id", "Name") new { @class = "form-control" })
+    </div>
+    *@
+    <div class="form-group">
+        @Html.LabelFor(m => m.Lists.MARKUP_PLAN)
+        @Html.TextBoxFor(m => m.Lists.MARKUP_PLAN, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Lists.EMAIL)
+        @Html.TextBoxFor(m => m.Lists.EMAIL, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Lists.MOBILE)
+        @Html.TextBoxFor(m => m.Lists.MOBILE, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+}
+
